@@ -1,6 +1,6 @@
 package de.learnyousome.assets
 
-//import sbt.PlayExceptions.AssetCompilationException
+import sbt.PlayExceptions.AssetCompilationException
 import java.io.File
 import scala.sys.process._
 
@@ -14,8 +14,7 @@ object StylusCompiler {
       (cssOutput, Some(compressedCssOutput), Seq(stylFile))
     } catch {
       case e: StylusCompilationException => {
-        //throw AssetCompilationException(Some(source), "Compilation error", 0, 0)
-        throw new RuntimeException("Stylus compiler " + "(" + e.line + "/" + e.column + ")" + ": " + e.message)
+        throw AssetCompilationException(Some(stylFile), "Stylus compiler: " + e.message, e.line, e.column)
       }
     }
   }
