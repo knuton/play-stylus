@@ -29,7 +29,7 @@ The plugin automatically registers for compilation of `app/assets/**/*.styl`, th
 sbt settings
 ------------
 
-  - `compile:resource-generators`: The stylus file watcher is beind added here
+  - `compile:resource-generators`: The stylus file watcher is being added here
   - `play-stylus-entry-points`: All files matching `app/assets/**/*.styl`, except files starting in an underscore
   - `play-stylus-options`: Currently not in use
 
