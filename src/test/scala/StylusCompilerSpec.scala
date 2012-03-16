@@ -1,0 +1,31 @@
+package de.learnyousome.assets.test
+
+import org.scalatest.Spec
+import java.io.File
+import de.learnyousome.assets.StylusCompiler
+
+class StylusCompilerSpec extends Spec {
+
+  describe("StylusCompiler") {
+
+    it("should compile well-formed stylus file") {
+      val stylFile = new File("test_cases/well_formed.styl")
+      val (full, minified, file) = StylusCompiler.compile(stylFile, Nil)
+      assert(full === ".test {\n  display: none;\n}\n\n")
+      assert(minified.orNull === ".test{display:none}\n\n")
+    }
+
+    it("should parse error for ill-formed stylus file") {
+      val stylFile = new File("test_cases/ill_formed.styl")
+      val thrown = intercept[sbt.PlayExceptions.AssetCompilationException] {
+        StylusCompiler.compile(stylFile, Nil)
+      }
+      val expectedMessage =
+        """Compilation error [Stylus compiler: illegal unary "in", missing left-hand operand]"""
+      assert(thrown.getMessage === expectedMessage)
+      assert(thrown.line.getOrElse(0) === 2)
+    }
+
+  }
+
+}
