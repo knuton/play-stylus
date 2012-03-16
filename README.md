@@ -10,7 +10,7 @@ Prerequisites
 The plugin assumes the availability of the `stylus` executable. With
 node.js and npm installed, run
 
-   npm install -g stylus
+    npm install -g stylus
 
 to install stylus globally, thereby installing not only the module, but
 also the executable.
