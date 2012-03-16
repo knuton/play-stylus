@@ -8,13 +8,14 @@ organization := "learnyousome"
 
 description := "SBT plugin for handling stylus assets in Play"
 
-resolvers += "Typesafe releases" at "http://repo.typesafe.com/typesafe/releases/"
+/// Dependencies
 
-//libraryDependencies += "play" %% "sbt-plugin" % "2.0"
+libraryDependencies ++= Seq(
+  "play" %% "play" % "2.0",
+  "play" % "sbt-plugin" % "2.0" from "http://repo.typesafe.com/typesafe/releases/play/sbt-plugin/scala_2.9.1/sbt_0.11.2/2.0/jars/sbt-plugin.jar"
+)
 
-libraryDependencies += "play" %% "play" % "2.0"
-
-// Publishing
+/// Publishing
 
 publishTo <<= (version) { version: String =>
   Some(Resolver.file("learnyousome-repo", file("../m2repo")))
