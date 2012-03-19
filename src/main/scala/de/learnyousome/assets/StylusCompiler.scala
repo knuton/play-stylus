@@ -8,8 +8,9 @@ object StylusCompiler {
 
   def compile(stylFile: File, options: Seq[String]): (String, Option[String], Seq[File]) = {
     try {
-      val cssOutput = captureOutput("stylus" #< stylFile)
-      val compressedCssOutput = captureOutput("stylus -c" #< stylFile)
+      val parentPath = stylFile.getParentFile.getAbsolutePath
+      val cssOutput = captureOutput(("stylus -I " + parentPath) #< stylFile)
+      val compressedCssOutput = captureOutput(("stylus -c -I " + parentPath) #< stylFile)
 
       (cssOutput, Some(compressedCssOutput), Seq(stylFile))
     } catch {
