@@ -10,16 +10,16 @@ object StylusPlugin extends Plugin {
   val stylusOptions = SettingKey[Seq[String]]("play-stylus-options")
   val StylusWatcher = PlayProject.AssetsCompiler("stylus",
     (_ ** "*.styl"),
-    stylusEntryPoints,
+    stylusEntryPoints in Compile,
     { (name, min) => name.replace(".styl", if (min) ".min.css" else ".css") },
     { StylusCompiler.compile _ },
-    stylusOptions
+    stylusOptions in Compile
   )
 
   override val settings = Seq(
     stylusEntryPoints <<= (sourceDirectory in Compile).apply(base => ((base / "assets" ** "*.styl") --- base / "assets" ** "_*")),
     stylusOptions := Seq.empty[String],
-    (resourceGenerators in Compile) <+= StylusWatcher
+    resourceGenerators in Compile <+= StylusWatcher
   )
 
 }
