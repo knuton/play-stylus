@@ -22,6 +22,13 @@ class StylusCompilerSpec extends Spec {
       assert(minified.orNull === ".test{color:#008000}\n\n")
     }
 
+    it("should include plain css import") {
+      val stylFile = new File("test_cases/with_css_import.styl")
+      val (full, minified, file) = StylusCompiler.compile(stylFile, "--include-css" :: Nil)
+      assert(full === ".test {\n  color: #008000;\n}\nbody { display: none; }\n\n")
+      assert(minified.orNull === ".test{color:#008000}\nbody { display: none; }\n\n")
+    }
+
     it("should parse error for ill-formed stylus file") {
       val stylFile = new File("test_cases/ill_formed.styl")
       val thrown = intercept[sbt.PlayExceptions.AssetCompilationException] {

@@ -20,7 +20,7 @@ Installation
 
 In your Play application folder, add
 
-    addSbtPlugin("learnyousome" % "play-stylus" % "0.1.0" from "http://cloud.github.com/downloads/knuton/play-stylus/play-stylus-0.1.0.jar")
+    addSbtPlugin("learnyousome" % "play-stylus" % "0.1.2" from "http://cloud.github.com/downloads/knuton/play-stylus/play-stylus-0.1.2.jar")
 
 to `project/plugins.sbt`.
 
@@ -31,7 +31,7 @@ sbt settings
 
   - `compile:resource-generators`: The stylus file watcher is being added here
   - `play-stylus-entry-points`: All files matching `app/assets/**/*.styl`, except files starting in an underscore
-  - `play-stylus-options`: Currently not in use
+  - `play-stylus-options`: A sequence of strings passed to stylus as command-line flags
 
 License
 -------
