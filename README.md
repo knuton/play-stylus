@@ -20,7 +20,7 @@ Installation
 
 In your Play application folder, add
 
-    addSbtPlugin("learnyousome" % "play-stylus" % "0.1.3" from "http://cloud.github.com/downloads/knuton/play-stylus/play-stylus-0.1.3.jar")
+    addSbtPlugin("patience" % "play-stylus" % "0.1.3" from "http://cloud.github.com/downloads/knuton/play-stylus/play-stylus-0.1.3.jar")
 
 to `project/plugins.sbt`.
 

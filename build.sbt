@@ -4,7 +4,7 @@ version := "0.1.3"
 
 sbtPlugin := true
 
-organization := "learnyousome"
+organization := "patience"
 
 description := "sbt plugin for handling stylus assets in Play"
 

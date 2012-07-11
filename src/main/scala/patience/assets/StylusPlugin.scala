@@ -1,4 +1,4 @@
-package de.learnyousome.assets
+package patience.assets
 
 import sbt._
 import sbt.Keys._

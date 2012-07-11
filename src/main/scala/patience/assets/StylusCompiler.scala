@@ -1,4 +1,4 @@
-package de.learnyousome.assets
+package patience.assets
 
 import sbt.PlayExceptions.AssetCompilationException
 import java.io.File

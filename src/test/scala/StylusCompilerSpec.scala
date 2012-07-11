@@ -1,8 +1,8 @@
-package de.learnyousome.assets.test
+package patience.assets.test
 
 import org.scalatest.Spec
 import java.io.File
-import de.learnyousome.assets.StylusCompiler
+import patience.assets.StylusCompiler
 
 class StylusCompilerSpec extends Spec {
 
