@@ -8,7 +8,7 @@ organization := "patience"
 
 description := "sbt plugin for handling stylus assets in Play"
 
-resolvers += Resolver.url("Typesafe Releases", url("http://repo.typesafe.com/typesafe/releases/"))(Resolver.mavenStylePatterns)
+resolvers += new MavenRepository("typesafe-releases", "http://repo.typesafe.com/typesafe/releases/")
 
 /// Dependencies
 
