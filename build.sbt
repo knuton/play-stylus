@@ -1,14 +1,20 @@
+/// Project
+
 name := "play-stylus"
 
-version := "0.1.3"
-
 sbtPlugin := true
+
+version := "0.1.3"
 
 organization := "patience"
 
 description := "sbt plugin for handling stylus assets in Play"
 
+/// Repositories
+
 resolvers += new MavenRepository("typesafe-releases", "http://repo.typesafe.com/typesafe/releases/")
+
+publishTo := Some(Resolver.sftp("Patience", "repo.patience.io", "repo"))
 
 /// Dependencies
 
