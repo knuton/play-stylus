@@ -20,7 +20,9 @@ Installation
 
 In your Play application folder, add
 
-    addSbtPlugin("patience" % "play-stylus" % "0.1.3" from "http://cloud.github.com/downloads/knuton/play-stylus/play-stylus-0.1.3.jar")
+    resolvers += "Patience Releases" at "http://repo.patience.com/"
+
+    addSbtPlugin("patience" % "play-stylus" % "0.1.3")
 
 to `project/plugins.sbt`.
 
