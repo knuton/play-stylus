@@ -19,7 +19,7 @@ object StylusCompiler {
       (cssOutput, Some(compressedCssOutput), Seq(stylFile))
     } catch {
       case e: StylusCompilationException => {
-        throw AssetCompilationException(Some(stylFile), "Stylus compiler: " + e.message, e.line, e.column)
+        throw AssetCompilationException(Some(stylFile), "Stylus compiler: " + e.message, Some(e.line), Some(e.column))
       }
     }
   }
