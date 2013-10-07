@@ -1,6 +1,6 @@
 package patience.assets
 
-import sbt.PlayExceptions.AssetCompilationException
+import play.PlayExceptions.AssetCompilationException
 import java.io.File
 import scala.sys.process._
 
@@ -36,7 +36,7 @@ object StylusCompiler {
     if (process.exitValue == 0)
       out.toString
     else
-      throw new StylusCompilationException(err.toString)
+      throw new StylusCompilationException(err.toString())
   }
 
   private val MarkedLine = """\s*>\s*(\d+)\|.*?""".r
