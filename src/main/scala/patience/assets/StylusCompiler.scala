@@ -49,7 +49,7 @@ object StylusCompiler {
     private def parseError(error: String): (Int, Int, String) = {
       var seen = 0
       var line = 0
-      var column = 0
+      val column = 0
       var message = "Unknown error, try running stylus directly"
       for (errline: String <- augmentString(error).lines) {
         errline match {
