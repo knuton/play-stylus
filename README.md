@@ -26,7 +26,11 @@ In your Play application folder, add
 
 to `project/plugins.sbt`.
 
-The plugin automatically registers for compilation of `app/assets/**/*.styl`, that is all stylus files in your `app/assets` directory.
+Then, in your build.sbt
+
+    patience.assets.StylusPlugin.stylusSettings
+
+The plugin registers for compilation of `app/assets/**/*.styl`, that is all stylus files in your `app/assets` directory.
 
 sbt settings
 ------------
